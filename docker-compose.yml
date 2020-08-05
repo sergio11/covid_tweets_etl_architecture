@@ -33,8 +33,6 @@ services:
 
   kafka:
     image: confluentinc/cp-kafka
-    ports:
-      - 9092:9092
     volumes:
       - kafka-data:/var/lib/kafka
     environment:
