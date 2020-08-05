@@ -19,7 +19,7 @@ services:
               properties:
                 bootstrap.servers: "kafka:9092"
     ports:
-      - 8080:8080
+      - 8080:8088
     links:
       - kafka
       
@@ -44,7 +44,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
       KAFKA_CONFLUENT_SUPPORT_METRICS_ENABLE: 'false'
       KAFKA_JMX_PORT: 9091
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
