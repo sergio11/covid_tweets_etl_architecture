@@ -1,13 +1,13 @@
-package com.dreamsoftware.covidtweetsprocessor.service.impl;
+package com.dreamsoftware.covidtweets.service.impl;
 
-import com.dreamsoftware.covidtweetsprocessor.model.Greetings;
-import com.dreamsoftware.covidtweetsprocessor.streams.TweetStreams;
+import com.dreamsoftware.covidtweets.model.Greetings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MimeTypeUtils;
+import com.dreamsoftware.covidtweets.config.streams.AppStreamsConfig;
 
 /**
  *
@@ -17,7 +17,7 @@ import org.springframework.util.MimeTypeUtils;
 public class GreetingsServiceImpl implements IGreetingsService {
 
     @Autowired
-    private TweetStreams greetingsStreams;
+    private AppStreamsConfig greetingsStreams;
 
     /**
      *

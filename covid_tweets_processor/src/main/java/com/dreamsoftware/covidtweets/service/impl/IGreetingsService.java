@@ -1,6 +1,6 @@
-package com.dreamsoftware.covidtweetsprocessor.service.impl;
+package com.dreamsoftware.covidtweets.service.impl;
 
-import com.dreamsoftware.covidtweetsprocessor.model.Greetings;
+import com.dreamsoftware.covidtweets.model.Greetings;
 
 /**
  *
