@@ -8,6 +8,11 @@ volumes:
   kafka-data:
     driver: local
 
+# Networks
+networks:
+  covid_processor_network:
+    driver: bridge
+
 services:
   akhq:
     image: tchiotludo/akhq
@@ -22,6 +27,8 @@ services:
       - 8088:8080
     links:
       - kafka
+    networks:
+      - covid_processor_network
       
   zookeeper:
     image: confluentinc/cp-zookeeper
@@ -30,6 +37,8 @@ services:
       - zookeeper-log:/var/lib/zookeeper/log
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
+    networks:
+      - covid_processor_network
 
   kafka:
     image: confluentinc/cp-kafka
@@ -50,3 +59,15 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
     links:
       - zookeeper
+    networks:
+      - covid_processor_network
+      
+      
+    # Covid Tweets Processor
+    covid_tweets_processor:
+        image: ssanchez11/covid_tweets_processor:0.0.1-SNAPSHOT
+        container_name: covid_tweets_processor
+        ports:
+            - "8080:8080"
+        networks:
+            - covid_processor_network
