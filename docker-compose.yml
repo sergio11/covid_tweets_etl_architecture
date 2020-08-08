@@ -61,13 +61,21 @@ services:
       - zookeeper
     networks:
       - covid_processor_network
+
+
+  # Covid Tweets Ingest
+  covid_tweets_ingest:
+    image: ssanchez11/covid_tweets_ingest:0.0.1-SNAPSHOT
+    container_name: covid_tweets_ingest
+    networks:
+      - covid_processor_network
       
       
-    # Covid Tweets Processor
-    covid_tweets_processor:
-        image: ssanchez11/covid_tweets_processor:0.0.1-SNAPSHOT
-        container_name: covid_tweets_processor
-        ports:
-            - "8080:8080"
-        networks:
-            - covid_processor_network
+  # Covid Tweets Processor
+  covid_tweets_processor:
+    image: ssanchez11/covid_tweets_processor:0.0.1-SNAPSHOT
+    container_name: covid_tweets_processor
+    ports:
+      - "8080:8080"
+    networks:
+      - covid_processor_network
