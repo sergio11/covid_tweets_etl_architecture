@@ -1,7 +1,7 @@
-package com.dreamsoftware.covidtweetsprocessor.web;
+package com.dreamsoftware.covidtweets.web;
 
-import com.dreamsoftware.covidtweetsprocessor.model.Greetings;
-import com.dreamsoftware.covidtweetsprocessor.service.impl.IGreetingsService;
+import com.dreamsoftware.covidtweets.model.Greetings;
+import com.dreamsoftware.covidtweets.service.impl.IGreetingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

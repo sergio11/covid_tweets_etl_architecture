@@ -1,4 +1,4 @@
-package com.dreamsoftware.covidtweetsprocessor.model;
+package com.dreamsoftware.covidtweets.model;
 
 import lombok.Getter;
 import lombok.Setter;
