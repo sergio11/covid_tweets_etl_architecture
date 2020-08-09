@@ -1,6 +1,6 @@
 package com.dreamsoftware.covidtweets.mapper;
 
-import com.dreamsoftware.covidtweets.models.TweetEntity;
+import com.dreamsoftware.covidtweets.models.TweetDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -24,6 +24,6 @@ public abstract class TweetEntityMapper {
         @Mapping(source = "tweetStatus.geoLocation.longitude", target = "geoLocationLongitude")
     })
     @Named("entityToDTO")
-    public abstract TweetEntity entityToDTO(Status tweetStatus);
+    public abstract TweetDTO entityToDTO(Status tweetStatus);
 
 }

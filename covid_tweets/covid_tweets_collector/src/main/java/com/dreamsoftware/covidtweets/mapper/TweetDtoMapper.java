@@ -1,20 +1,20 @@
 package com.dreamsoftware.covidtweets.mapper;
 
-import com.dreamsoftware.covidtweets.models.UserDTO;
+import com.dreamsoftware.covidtweets.models.TweetDTO;
+import com.dreamsoftware.covidtweets.persistence.model.TweetEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mappings;
 import org.mapstruct.Named;
-import twitter4j.User;
 
 /**
  *
  * @author ssanchez
  */
 @Mapper(unmappedTargetPolicy = org.mapstruct.ReportingPolicy.IGNORE)
-public abstract class UserEntityMapper {
+public abstract class TweetDtoMapper {
 
     @Mappings({})
-    @Named("entityToDTO")
-    public abstract UserDTO entityToDTO(User tweetUser);
+    @Named("dtoToEntity")
+    public abstract TweetEntity dtoToEntity(TweetDTO tweetDto);
 
 }

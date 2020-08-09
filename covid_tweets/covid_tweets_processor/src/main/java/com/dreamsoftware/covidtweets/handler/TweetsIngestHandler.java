@@ -1,7 +1,7 @@
 package com.dreamsoftware.covidtweets.handler;
 
 import com.dreamsoftware.covidtweets.config.streams.AppStreamsConfig;
-import com.dreamsoftware.covidtweets.models.TweetEntity;
+import com.dreamsoftware.covidtweets.models.TweetDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -23,7 +23,7 @@ public class TweetsIngestHandler {
      */
     @StreamListener(AppStreamsConfig.TWEET_INGEST_CHANNEL)
     @SendTo(AppStreamsConfig.PROCESSED_TWEETS_CHANNEL)
-    public TweetEntity onNewTweet(final TweetEntity newTweet) {
+    public TweetDTO onNewTweet(final TweetDTO newTweet) {
         log.debug("NewTweet -> " + newTweet.getText());
         return newTweet;
     }

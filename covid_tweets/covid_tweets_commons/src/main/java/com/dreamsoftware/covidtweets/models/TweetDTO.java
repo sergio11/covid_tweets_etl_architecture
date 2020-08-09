@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TweetEntity {
+public class TweetDTO {
 
     private Long id;
     private Date createdAt;
@@ -23,7 +23,7 @@ public class TweetEntity {
     private Integer favoriteCount;
     private Integer retweetCount;
     private String text;
-    private UserEntity user;
+    private UserDTO user;
     private Double geoLocationLatitude;
     private Double geoLocationLongitude;
 }
