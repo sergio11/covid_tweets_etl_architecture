@@ -65,9 +65,9 @@ services:
     networks:
       - covid_processor_network
 
+
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.1
-    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.2
     environment:
       - discovery.type=single-node
       - cluster.name=covid-tweets-es-cluster
@@ -79,18 +79,19 @@ services:
         hard: -1
     volumes:
       - elasticsearch-data:/usr/share/elasticsearch/data
-    ports:
-      - 9200:9200
     networks:
       - covid_processor_network
 
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.8.1
+    image: docker.elastic.co/kibana/kibana-oss:7.6.2
+    ports:
+      - "5601:5601"
     environment:
-      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
-
-
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    networks:
+      - covid_processor_network
+      
   # Covid Tweets Ingest
   covid_tweets_ingest:
     image: ssanchez11/covid_tweets_ingest:0.0.1-SNAPSHOT
