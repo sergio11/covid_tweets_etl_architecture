@@ -13,9 +13,19 @@ public interface AppStreamsConfig {
     String PROCESSED_TWEETS_CHANNEL = "processed-tweets";
     String TWEET_INGEST_CHANNEL = "tweets-ingest";
 
+    /**
+     * Input Channel Definition
+     *
+     * @return
+     */
     @Input(TWEET_INGEST_CHANNEL)
     MessageChannel inputTweetsIngest();
 
+    /**
+     * Output channel definition
+     *
+     * @return
+     */
     @Output(PROCESSED_TWEETS_CHANNEL)
     MessageChannel outboundProcessedTweets();
 

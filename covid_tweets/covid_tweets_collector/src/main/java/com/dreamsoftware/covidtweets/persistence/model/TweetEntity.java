@@ -67,4 +67,16 @@ public class TweetEntity {
      */
     @Field(type = FieldType.Double)
     private Double geoLocationLongitude;
+
+    /**
+     * Sentiment Label
+     */
+    @Field(type = FieldType.Text)
+    private String sentimentLabel;
+
+    /**
+     * Sentiment Value
+     */
+    @Field(type = FieldType.Integer)
+    private Integer sentimentValue;
 }

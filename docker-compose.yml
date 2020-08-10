@@ -19,6 +19,7 @@ networks:
 services:
   akhq:
     image: tchiotludo/akhq
+    container_name: akhq
     environment:
       AKHQ_CONFIGURATION: |
         akhq:
@@ -35,6 +36,7 @@ services:
       
   zookeeper:
     image: confluentinc/cp-zookeeper
+    container_name: zookeeper
     volumes:
       - zookeeper-data:/var/lib/zookeeper/data
       - zookeeper-log:/var/lib/zookeeper/log
@@ -45,6 +47,7 @@ services:
 
   kafka:
     image: confluentinc/cp-kafka
+    container_name: kafka
     ports:
       - 9092:9092
     volumes:
@@ -68,6 +71,7 @@ services:
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.2
+    container_name: elasticsearch
     environment:
       - discovery.type=single-node
       - cluster.name=covid-tweets-es-cluster
@@ -85,10 +89,9 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana-oss:7.6.2
+    container_name: kibana
     ports:
       - "5601:5601"
-    environment:
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
     networks:
       - covid_processor_network
       
@@ -104,8 +107,6 @@ services:
   covid_tweets_processor:
     image: ssanchez11/covid_tweets_processor:0.0.1-SNAPSHOT
     container_name: covid_tweets_processor
-    ports:
-      - "8080:8080"
     networks:
       - covid_processor_network
 
