@@ -45,6 +45,7 @@ public class TweetsProcessedHandler {
         try {
             tweetService.save(newProcessedTweet);
         } catch (final Exception ex) {
+            ex.printStackTrace();
             log.error("Collect Tweet Exception -> " + ex.getMessage());
         }
     }
