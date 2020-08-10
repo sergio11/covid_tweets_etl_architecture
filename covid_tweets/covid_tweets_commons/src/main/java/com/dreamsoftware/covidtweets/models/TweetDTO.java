@@ -26,4 +26,6 @@ public class TweetDTO {
     private UserDTO user;
     private Double geoLocationLatitude;
     private Double geoLocationLongitude;
+    private String sentimentLabel;
+    private Integer sentimentValue;
 }

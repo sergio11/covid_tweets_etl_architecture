@@ -16,13 +16,12 @@
         <relativePath>../</relativePath>
     </parent>
 
+    <properties>
+        <core.nlp.version>4.0.0</core.nlp.version>
+    </properties>
+
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -30,6 +29,18 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>${core.nlp.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>${core.nlp.version}</version>
+            <classifier>models</classifier>
+        </dependency>
 
     </dependencies>
 
@@ -69,6 +80,7 @@
                     <forceTags>true</forceTags>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
