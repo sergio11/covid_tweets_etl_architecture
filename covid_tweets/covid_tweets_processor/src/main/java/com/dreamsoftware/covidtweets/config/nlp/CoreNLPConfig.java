@@ -20,7 +20,7 @@ public class CoreNLPConfig {
     @Bean
     public StanfordCoreNLP provideStanfordCoreNLP() {
         Properties props = new Properties();
-        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,sentiment");
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,sentiment");
         return new StanfordCoreNLP(props);
     }
 
