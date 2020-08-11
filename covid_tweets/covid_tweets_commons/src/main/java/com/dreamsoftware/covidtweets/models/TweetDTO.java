@@ -30,6 +30,7 @@ public class TweetDTO {
     private Double geoLocationLongitude;
     private String sentimentLabel;
     private Integer sentimentValue;
-    private Map<String, Set<String>> entityMentions;
     private String tokensAndNERTags;
+    private Map<String, Set<String>> entityMentions;
+
 }

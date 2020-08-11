@@ -1,6 +1,7 @@
 package com.dreamsoftware.covidtweets.persistence.model;
 
 import java.util.Date;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -79,4 +80,23 @@ public class TweetEntity {
      */
     @Field(type = FieldType.Integer)
     private Integer sentimentValue;
+
+    /**
+     * Tokens And NER Tags
+     */
+    @Field(type = FieldType.Text)
+    private String tokensAndNERTags;
+
+    /**
+     * Entity Mention List
+     */
+    @Field(type = FieldType.Nested, includeInParent = true)
+    private List<EntityMentionEntity> entityMentionList;
+
+    /**
+     * User
+     */
+    @Field(type = FieldType.Nested, includeInParent = true)
+    private UserEntity user;
+
 }
