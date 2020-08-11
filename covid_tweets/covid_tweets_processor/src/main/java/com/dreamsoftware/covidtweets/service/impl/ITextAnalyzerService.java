@@ -1,6 +1,6 @@
 package com.dreamsoftware.covidtweets.service.impl;
 
-import com.dreamsoftware.covidtweets.model.Sentiment;
+import com.dreamsoftware.covidtweets.model.TextAnalysisResult;
 
 /**
  *
@@ -9,10 +9,8 @@ import com.dreamsoftware.covidtweets.model.Sentiment;
 public interface ITextAnalyzerService {
 
     /**
-     * Find Sentiment
-     *
      * @param text
      * @return
      */
-    Sentiment findSentiment(final String text);
+    TextAnalysisResult analyze(final String text);
 }

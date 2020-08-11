@@ -11,6 +11,11 @@ public interface AppStreamsConfig {
 
     String PROCESSED_TWEETS_CHANNEL = "processed-tweets";
 
+    /**
+     * Input Channel definition
+     *
+     * @return
+     */
     @Input(PROCESSED_TWEETS_CHANNEL)
     MessageChannel inputProcessedTweets();
 }

@@ -8,6 +8,10 @@ import com.dreamsoftware.covidtweets.models.TweetDTO;
  */
 public interface ITweetsService {
 
+    /**
+     *
+     * @param tweetDto
+     */
     void save(final TweetDTO tweetDto);
 
 }

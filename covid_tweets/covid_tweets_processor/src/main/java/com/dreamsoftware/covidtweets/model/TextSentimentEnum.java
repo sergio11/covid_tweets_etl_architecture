@@ -6,7 +6,7 @@ import java.util.HashMap;
  *
  * @author ssanchez
  */
-public enum Sentiment {
+public enum TextSentimentEnum {
 
     VERY_NEGATIVE(0),
     NEGATIVE(1),
@@ -15,17 +15,17 @@ public enum Sentiment {
     VERY_POSITIVE(4),
     UNKNOW(5);
 
-    private static final HashMap<Integer, Sentiment> lookup = new HashMap<>();
+    private static final HashMap<Integer, TextSentimentEnum> lookup = new HashMap<>();
 
     static {
-        for (Sentiment s : Sentiment.values()) {
+        for (TextSentimentEnum s : TextSentimentEnum.values()) {
             lookup.put(s.getValue(), s);
         }
     }
 
     private final int value;
 
-    private Sentiment(final int value) {
+    private TextSentimentEnum(final int value) {
         this.value = value;
     }
 
@@ -33,7 +33,7 @@ public enum Sentiment {
         return value;
     }
 
-    public static Sentiment getFromValue(Integer value) {
+    public static TextSentimentEnum getFromValue(Integer value) {
         return lookup.get(value) != null ? lookup.get(value) : lookup.get(5);
     }
 
