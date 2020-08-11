@@ -1,6 +1,8 @@
 package com.dreamsoftware.covidtweets.models;
 
 import java.util.Date;
+import java.util.Map;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,4 +30,6 @@ public class TweetDTO {
     private Double geoLocationLongitude;
     private String sentimentLabel;
     private Integer sentimentValue;
+    private Map<String, Set<String>> entityMentions;
+    private String tokensAndNERTags;
 }

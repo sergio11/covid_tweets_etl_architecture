@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.integration.IntegrationMessageHeaderAccessor;
+import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -29,6 +30,7 @@ public class TweetsProcessedHandler {
      * @param topic
      * @param partition
      * @param offset
+     * @param acknowledgment
      * @param deliveryAttempt
      */
     @StreamListener(AppStreamsConfig.PROCESSED_TWEETS_CHANNEL)
@@ -37,6 +39,7 @@ public class TweetsProcessedHandler {
             @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
             @Header(KafkaHeaders.RECEIVED_PARTITION_ID) Integer partition,
             @Header(KafkaHeaders.OFFSET) Long offset,
+            @Header(KafkaHeaders.ACKNOWLEDGMENT) Acknowledgment acknowledgment,
             @Header(IntegrationMessageHeaderAccessor.DELIVERY_ATTEMPT) Integer deliveryAttempt) {
 
         log.info("NewsProcessedTweet with id '{}' and text '{}' received from bus. topic: {}, partition: {}, offset: {}, deliveryAttempt: {}",
@@ -44,6 +47,11 @@ public class TweetsProcessedHandler {
 
         try {
             tweetService.save(newProcessedTweet);
+            // commit offset
+            if (acknowledgment != null) {
+                acknowledgment.acknowledge();
+                log.info("Commit Offsets ...");
+            }
         } catch (final Exception ex) {
             log.error("Collect Tweet Exception -> " + ex.getMessage());
         }

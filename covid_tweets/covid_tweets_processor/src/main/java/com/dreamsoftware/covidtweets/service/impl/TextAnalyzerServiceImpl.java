@@ -1,13 +1,20 @@
 package com.dreamsoftware.covidtweets.service.impl;
 
-import com.dreamsoftware.covidtweets.model.Sentiment;
+import com.dreamsoftware.covidtweets.model.TextAnalysisResult;
+import com.dreamsoftware.covidtweets.model.TextSentimentEnum;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+import static java.util.stream.Collectors.groupingBy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -28,7 +35,38 @@ public class TextAnalyzerServiceImpl implements ITextAnalyzerService {
      * @return
      */
     @Override
-    public Sentiment findSentiment(String text) {
+    public TextAnalysisResult analyze(final String text) {
+        Assert.notNull(text, "Text can not be null");
+
+        final CoreDocument doc = new CoreDocument(text);
+        // annotate the document
+        stanfordCoreNLP.annotate(doc);
+
+        // Find Sentiment
+        final TextSentimentEnum textSentiment = findSentiment(text);
+
+        // Entity Mentions
+        final Map<String, Set<String>> entityMentions = doc.entityMentions().stream()
+                .collect(groupingBy(CoreEntityMention::entityType, Collectors.mapping(
+                        CoreEntityMention::entity,
+                        Collectors.toSet())));
+
+        // Tokens And Ner Tags
+        final String tokensAndNERTags = doc.tokens().stream().map(token -> "(" + token.word() + "," + token.ner() + ")").collect(
+                Collectors.joining(" "));
+
+        return TextAnalysisResult.builder()
+                .sentiment(textSentiment)
+                .entityMentions(entityMentions)
+                .tokensAndNERTags(tokensAndNERTags)
+                .build();
+
+    }
+
+    /**
+     * Private Methods
+     */
+    private TextSentimentEnum findSentiment(String text) {
         Assert.notNull(text, "Text can not be null");
         int mainSentiment = 0;
         int longest = 0;
@@ -42,7 +80,6 @@ public class TextAnalyzerServiceImpl implements ITextAnalyzerService {
                 longest = partText.length();
             }
         }
-        return Sentiment.getFromValue(mainSentiment);
+        return TextSentimentEnum.getFromValue(mainSentiment);
     }
-
 }
