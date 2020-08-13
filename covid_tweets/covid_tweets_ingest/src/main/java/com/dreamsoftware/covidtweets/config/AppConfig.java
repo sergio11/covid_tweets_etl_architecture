@@ -37,9 +37,7 @@ public class AppConfig {
 
         TwitterMessageProducer twitterMessageProducer
                 = new TwitterMessageProducer(twitterStream, outputChannel, tweetEntityMapper);
-
         twitterMessageProducer.setTerms(Arrays.asList("covid", "covid-19", "pandemic"));
-
         return twitterMessageProducer;
     }
 
