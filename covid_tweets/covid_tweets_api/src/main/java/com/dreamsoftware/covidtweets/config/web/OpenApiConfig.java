@@ -26,9 +26,9 @@ public class OpenApiConfig {
                                 .in(SecurityScheme.In.HEADER).name("Authorization")))
                 .addSecurityItem(
                         new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read", "write")))
-                .info(new Info().title("Cosechalia REST API")
+                .info(new Info().title("Covid Tweets REST API")
                         .description("Provides a hypermedia-driven REST API for Apps")
-                        .version("v0.0.60-SNAPSHOT")
+                        .version("v0.0.1-SNAPSHOT")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                         .description("Provides a hypermedia-driven REST API for Apps")

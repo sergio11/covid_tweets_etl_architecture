@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -19,6 +20,7 @@ import org.springframework.util.Assert;
  * @author ssanchez
  */
 @Mapper(unmappedTargetPolicy = org.mapstruct.ReportingPolicy.IGNORE)
+@Slf4j
 public abstract class TweetDtoMapper {
 
     @Autowired
@@ -38,7 +40,11 @@ public abstract class TweetDtoMapper {
      */
     protected List<EntityMentionEntity> mappingEntityMentions(final Map<String, Set<String>> entityMentions) {
         Assert.notNull(entityMentions, "Entity Mentions can not be null");
-        return entityMentions.entrySet().stream().map(entry -> new EntityMentionEntity(entry.getKey(), entry.getValue())).collect(Collectors.toList());
+        final List<EntityMentionEntity> entityMentionEntityList = entityMentions.entrySet().stream().map(entry -> new EntityMentionEntity(entry.getKey(), entry.getValue())).collect(Collectors.toList());
+        for (final EntityMentionEntity entityMention : entityMentionEntityList) {
+            log.info("entityMention -> " + entityMention.getEntityType() + " / " + entityMention.getEntitySet());
+        }
+        return entityMentionEntityList;
     }
 
 }
