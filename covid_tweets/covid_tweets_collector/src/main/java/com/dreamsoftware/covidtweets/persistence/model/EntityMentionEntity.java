@@ -21,7 +21,7 @@ public class EntityMentionEntity {
     @Field(type = FieldType.Text)
     private String entityType;
 
-    @Field(type = FieldType.Flattened)
+    @Field(type = FieldType.Flattened, includeInParent = true)
     private Set<String> entitySet;
 
 }

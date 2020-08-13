@@ -38,7 +38,7 @@ public class TweetsServiceImpl implements ITweetsService {
     public Page<TweetDTO> findPaginated(Integer page, Integer size) {
         Assert.notNull(page, "Page can not be null");
         Assert.notNull(size, "Size can not be null");
-        return findPaginated(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdAt")));
+        return findPaginated(PageRequest.of(page, size));
     }
 
     /**

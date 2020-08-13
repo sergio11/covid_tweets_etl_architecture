@@ -3,6 +3,7 @@ package com.dreamsoftware.covidtweets.mapper;
 import com.dreamsoftware.covidtweets.models.TweetDTO;
 import com.dreamsoftware.covidtweets.persistence.model.EntityMentionEntity;
 import com.dreamsoftware.covidtweets.persistence.model.TweetEntity;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -33,7 +34,8 @@ public abstract class TweetMapper {
     public abstract TweetEntity dtoToEntity(TweetDTO tweetDto);
 
     @Mappings({
-        @Mapping(expression = "java(userEntityMapper.entityToDTO(tweetEntity.getUser()))", target = "user")
+        @Mapping(expression = "java(userEntityMapper.entityToDTO(tweetEntity.getUser()))", target = "user"),
+        @Mapping(expression = "java(mappingEntityMentions(tweetEntity.getEntityMentionList()))", target = "entityMentions")
     })
     @Named("entityToDTO")
     public abstract TweetDTO entityToDTO(TweetEntity tweetEntity);
@@ -54,6 +56,20 @@ public abstract class TweetMapper {
     protected List<EntityMentionEntity> mappingEntityMentions(final Map<String, Set<String>> entityMentions) {
         Assert.notNull(entityMentions, "Entity Mentions can not be null");
         return entityMentions.entrySet().stream().map(entry -> new EntityMentionEntity(entry.getKey(), entry.getValue())).collect(Collectors.toList());
+    }
+
+    /**
+     *
+     * @param entityMentionList
+     * @return
+     */
+    protected Map<String, Set<String>> mappingEntityMentions(final List<EntityMentionEntity> entityMentionList) {
+        Assert.notNull(entityMentionList, "Entity Mentions can not be null");
+        final Map<String, Set<String>> entityMentions = new HashMap<>();
+        entityMentionList.forEach((entityMentionEntity) -> {
+            entityMentions.put(entityMentionEntity.getEntityType(), entityMentionEntity.getEntitySet());
+        });
+        return entityMentions;
     }
 
 }
