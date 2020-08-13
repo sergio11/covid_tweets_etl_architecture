@@ -17,7 +17,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @NoArgsConstructor
 public class UserEntity {
 
-    @Field(type = FieldType.Long)
+    @Field(type = FieldType.Integer)
     private Long id;
 
     @Field(type = FieldType.Text)

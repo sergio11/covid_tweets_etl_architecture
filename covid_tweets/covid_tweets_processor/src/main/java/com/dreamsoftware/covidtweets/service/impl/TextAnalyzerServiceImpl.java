@@ -48,7 +48,7 @@ public class TextAnalyzerServiceImpl implements ITextAnalyzerService {
         // Entity Mentions
         final Map<String, Set<String>> entityMentions = doc.entityMentions().stream()
                 .collect(groupingBy(CoreEntityMention::entityType, Collectors.mapping(
-                        CoreEntityMention::entity,
+                        CoreEntityMention::text,
                         Collectors.toSet())));
 
         // Tokens And Ner Tags

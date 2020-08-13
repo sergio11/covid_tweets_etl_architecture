@@ -21,6 +21,7 @@
         <module>covid_tweets_ingest</module>
         <module>covid_tweets_processor</module>
         <module>covid_tweets_collector</module>
+        <module>covid_tweets_api</module>
     </modules>
 
     <properties>

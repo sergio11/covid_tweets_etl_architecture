@@ -48,8 +48,6 @@ services:
   kafka:
     image: confluentinc/cp-kafka
     container_name: kafka
-    ports:
-      - 9092:9092
     volumes:
       - kafka-data:/var/lib/kafka
     environment:
@@ -114,5 +112,14 @@ services:
   covid_tweets_collector:
     image: ssanchez11/covid_tweets_collector:0.0.1-SNAPSHOT
     container_name: covid_tweets_collector
+    networks:
+      - covid_processor_network
+
+  # Covid Tweets API
+  covid_tweets_api:
+    image: ssanchez11/covid_tweets_api:0.0.1-SNAPSHOT
+    container_name: covid_tweets_api
+    ports:
+      - 8080:8080
     networks:
       - covid_processor_network

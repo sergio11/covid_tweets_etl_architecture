@@ -25,7 +25,6 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 public class TweetEntity {
 
     @Id
-    @Field(type = FieldType.Long)
     private Long id;
 
     /**
@@ -91,7 +90,7 @@ public class TweetEntity {
     /**
      * Entity Mention List
      */
-    @Field(type = FieldType.Flattened, includeInParent = true)
+    @Field(type = FieldType.Nested, includeInParent = true)
     private List<EntityMentionEntity> entityMentionList;
 
     /**
