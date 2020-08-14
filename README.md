@@ -27,7 +27,7 @@ A microservices ETL architecture for the ingestion and analysis of Tweets about 
 
 <img width="auto" src="./screenshots/kafka_topics.PNG" />
 
-## Tweets will be stored to elasticsearch index and visualize with Kibana.
+## Tweets processed will be stored to elasticsearch index and visualize with Kibana.
 
 <img width="auto" src="./screenshots/tweets_indexed.PNG" />
 
