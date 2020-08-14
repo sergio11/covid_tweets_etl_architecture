@@ -6,10 +6,24 @@ A microservices ETL architecture for the ingestion and analysis of Tweets about 
 
 <img width="auto" src="./covid_tweets_etl_architecture.png" />
 
+## Applications
+
+* *covid-tweets-api*
+`Spring Boot` Web Java application that allows to retrieve and view the tweets processed through a `REST API` or `STOMP over WebSocket`. 
+
+* *covid-tweets-collector*
+`Spring Boot` Web Java application that listens to news messages in `processed-tweets` topic in `Kafka`,  saves them in `Elasticsearch`. 
+
+* *covid-tweets-ingest*
+`Spring Boot` Web Java application that implement a Twitter client that receives the latest tweets about COVID-19, creates the data model associated with the tweet, and posts it to the topic `tweets-ingest`in `Kafka`.
+
+* *covid-tweets-processor*
+`Spring Boot` Web Java application that listens to news messages in `tweets-ingest` topic in `Kafka`and it make the analysis of the text through the analysis service implemented on `Standford Core NLP`.
+
 ## Used technology
 
 * Spring Boot 2.3.2 / Apache Maven 3.6.3.
-* Spring Cloud Stream.
+* Spring Cloud Stream (to build highly scalable event-driven applications connected with shared messaging systems)
 * Spring Cloud Starter Stream Kafka.
 * lombok.
 * Twitter4j Stream.
