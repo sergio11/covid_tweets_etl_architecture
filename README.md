@@ -40,6 +40,25 @@ Project developed to practice what I have learned in the Udemy course [Apache Ka
 * Spring Boot Starter Websocket.
 * Stanford Corenlp.
 
+## Running Applications as Docker containers.
+
+### Rake Tasks
+
+The available tasks are detailed below (rake --task)
+
+
+| Task | Description |
+| ------ | ------ |
+| check_deployment_file_task | Check Deployment File |
+| check_docker_task | Check Docker and Docker Compose Task |
+| cleaning_environment_task | Cleaning Evironment Task |
+| deploy | Deploys the Covid Tweets Architecture and laun... |
+| login | Authenticating with existing credentials |
+| start | Start Containers |
+| status | Status Containers |
+| stop | Stop Containers |
+| undeploy | UnDeploy Covid Tweets Architecture |
+
 ## Some screenshots
 
 ### Deploy with Docker Compose.
