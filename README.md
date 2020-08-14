@@ -18,3 +18,7 @@ A microservices ETL architecture for the ingestion and analysis of Tweets about 
 * Spring Boot Starter Websocket.
 * Stanford Corenlp.
 
+
+
+<img width=190 align="left" src="./screenshots/kafka_topics.PNG" />
+
