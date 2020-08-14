@@ -2,6 +2,8 @@
 
 A microservices ETL architecture for the ingestion and analysis of Tweets about the COVID-19.
 
+## Architecture Overview
+
 ## Used technology
 
 * Spring Boot 2.3.2 / Apache Maven 3.6.3.
