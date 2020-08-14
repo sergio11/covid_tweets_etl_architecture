@@ -1,6 +1,6 @@
 # Covid Tweets ETL Platform (A Spring Cloud Stream project)
 
-ETL platform for the ingestion and analysis of Tweets on the subject of COVID-19.
+A microservices ETL architecture for the ingestion and analysis of Tweets about the COVID-19.
 
 ## Used technology
 
