@@ -9,7 +9,7 @@ A microservices ETL architecture for the ingestion and analysis of Tweets about 
 * Spring Cloud Starter Stream Kafka.
 * lombok.
 * Twitter4j Stream.
-* Mapstruct
+* Mapstruct.
 * Elasticsearch oss 7.6.2.
 * Spring Boot Starter Data Elasticsearch.
 * kibana oss 7.6.2.
