@@ -1,2 +1,3 @@
-# spring_cloud_stream_kafka
-Spring Cloud Stream Kafka
+# Covid Tweets ETL Platform (A Spring Cloud Stream project)
+
+
