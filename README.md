@@ -1,4 +1,4 @@
-# Covid Tweets ETL Platform (A Spring Cloud Stream project)
+# Covid Tweets ETL Architecture (A Spring Cloud Stream project)
 
 A microservices ETL architecture for the ingestion and analysis of Tweets about the COVID-19.
 
