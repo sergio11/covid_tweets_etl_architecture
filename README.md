@@ -33,6 +33,23 @@ A microservices ETL architecture for the ingestion and analysis of Tweets about 
 
 <img width="auto" src="./screenshots/tweet_processed_kibana.PNG" />
 
+## Tweets processed can be get through the REST API / WebSockets offered from the Covid Tweets Microservice API.
+
+<img width="auto" src="./screenshots/covid_tweets_rest_api.PNG" />
+
+<img width="auto" src="./screenshots/swagger_rest_api.PNG" />
+
+## Visualization of the general sentiment and the most frequent terms.
+
+<img width="auto" src="./screenshots/kibana_visualization.PNG" />
+<img width="auto" src="./screenshots/kibana_visualization_2.PNG" />
+<img width="auto" src="./screenshots/kibana_visualization_3.PNG" />
+<img width="auto" src="./screenshots/kibana_visualization_4.PNG" />
+
+
+
+
+
 
 
 
