@@ -19,6 +19,20 @@ A microservices ETL architecture for the ingestion and analysis of Tweets about 
 * Stanford Corenlp.
 
 
+## Deploy with Docker Compose.
 
-<img width=190 align="left" src="./screenshots/kafka_topics.PNG" />
+<img width="auto" src="./screenshots/platform_containers.PNG" />
+
+## Using Akhq dashboard for topics management and kafka broker.
+
+<img width="auto" src="./screenshots/kafka_topics.PNG" />
+
+## Tweets will be stored to elasticsearch index and visualize with Kibana.
+
+<img width="auto" src="./screenshots/tweets_indexed.PNG" />
+
+<img width="auto" src="./screenshots/tweet_processed_kibana.PNG" />
+
+
+
 
