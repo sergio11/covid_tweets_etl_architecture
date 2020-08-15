@@ -65,6 +65,19 @@ To start the platform make sure you have Ruby installed, go to the root director
 <img width="auto" src="./screenshots/rake_task.PNG" />
 
 
+Also make sure to define your own credentials in the `twitter4j.properties` file
+
+```
+oauth.consumerKey=YOUR_CONSUMER_KEY
+oauth.consumerSecret=YOUR_CONSUMER_SECRET
+oauth.accessToken=YOUR_ACCESS_TOKEN
+oauth.accessTokenSecret=YOUR_ACCESS_TOKEN_SECRET
+
+```
+
+
+
+
 ## Some screenshots
 
 ### Deploy with Docker Compose.
