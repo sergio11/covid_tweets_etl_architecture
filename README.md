@@ -2,9 +2,9 @@
 
 A microservices ETL architecture for the ingestion and analysis of Tweets about the COVID-19.
 
-
 Project developed to practice what I have learned in the Udemy course [Apache Kafka Series - Learn Apache Kafka for Beginners v2](https://www.udemy.com/course/apache-kafka/).
 
+Also you can read more detail information about this project [in this Medium article](https://medium.com/@sanchezsanchezsergio418/covid-tweets-etl-architecture-be4b8d03a036).
 
 ## Architecture Overview
 
