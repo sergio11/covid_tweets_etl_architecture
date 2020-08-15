@@ -59,6 +59,12 @@ The available tasks are detailed below (rake --task)
 | stop | Stop Containers |
 | undeploy | UnDeploy Covid Tweets Architecture |
 
+
+To start the platform make sure you have Ruby installed, go to the root directory of the project and run the `rake deploy` task, this task will carry out a series of preliminary checks, discard images and volumes that are no longer necessary and also proceed to download all the images and the initialization of the containers.
+
+<img width="auto" src="./screenshots/rake_task.PNG" />
+
+
 ## Some screenshots
 
 ### Deploy with Docker Compose.
