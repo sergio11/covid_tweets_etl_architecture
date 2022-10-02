@@ -107,8 +107,9 @@ oauth.accessTokenSecret=YOUR_ACCESS_TOKEN_SECRET
 <img width="auto" src="./screenshots/kibana_visualization_3.PNG" />
 <img width="auto" src="./screenshots/kibana_visualization_4.PNG" />
 
+## Visitors Count
 
-
+<img width="auto" src="https://profile-counter.glitch.me/covid_tweets_etl_architecture/count.svg" />
 
 
 
