@@ -1,10 +1,14 @@
-# Covid Tweets ETL Architecture (A Spring Cloud Stream project)
+## Real-time COVID-19 Tweet Analysis 🌐📊
 
-A microservices ETL architecture for the ingestion and analysis of Tweets about the COVID-19.
+Unleash the power of real-time COVID-19 Tweet analysis with this microservices ETL architecture. Built on Spring Cloud Stream and Apache Kafka, this project is your gateway to ingesting, processing, and visualizing tweets about the pandemic.
 
 Project developed to practice what I have learned in the Udemy course [Apache Kafka Series - Learn Apache Kafka for Beginners v2](https://www.udemy.com/course/apache-kafka/).
 
-Also you can read more detail information about this project [in this Medium article](https://medium.com/@sanchezsanchezsergio418/covid-tweets-etl-architecture-be4b8d03a036).
+The tech stack includes Spring Boot 2.3.2, Apache Maven 3.6.3, Spring Cloud Stream, Elasticsearch, Kibana, and more, all running as Docker containers.
+
+Explore the project, visualize COVID-19 tweet data, and analyze sentiment and trending terms with ease. For more detailed information, check out our [Medium article](https://medium.com/@sanchezsanchezsergio418/covid-tweets-etl-architecture-be4b8d03a036).
+
+Thank you for visiting the Covid Tweets ETL Architecture GitHub repository! Stay informed and empowered with real-time Tweet analysis. 📈🦠🔍
 
 ## Architecture Overview
 
