@@ -12,6 +12,12 @@ Explore the project, visualize COVID-19 tweet data, and analyze sentiment and tr
 
 Thank you for visiting the Covid Tweets ETL Architecture GitHub repository! Stay informed and empowered with real-time Tweet analysis. 📈🦠🔍
 
+## ⚠️ Disclaimer
+
+**Real-time COVID-19 Tweet Analysis** is an **educational project** designed to practice real-time data analysis by ingesting and processing public tweets related to COVID-19. This tool is **not intended for professional use or medical decision-making**.
+
+The results and analysis provided should be considered part of a **practical learning experience** and **not as an official source of information**. Always consult reliable and official sources for public health information.
+
 ## Architecture Overview
 
 <img width="auto" src="./covid_tweets_etl_architecture.png" />
