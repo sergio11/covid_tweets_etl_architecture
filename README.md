@@ -1,6 +1,6 @@
 ## Real-time COVID-19 Tweet Analysis 🌐📊
 
-<img width="auto" height="250" align="left" src="./covid_tweets_main_logo.webp" />
+<img width="auto" height="250" align="left" src="screenshots/covid_tweets_main_logo.webp" />
 
 Unleash the power of real-time COVID-19 Tweet analysis with this microservices ETL architecture. Built on Spring Cloud Stream and Apache Kafka, this project is your gateway to ingesting, processing, and visualizing tweets about the pandemic.
 
